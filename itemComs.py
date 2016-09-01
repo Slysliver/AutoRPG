@@ -29,18 +29,18 @@ class Item():
 		self.__weight = weight
 	
 	def getiteminfo(self, detail):
-		if detail == 'itmname'
+		if detail == 'itmname':
 			return self.__itmname
-		elif detail == 'itemtype'
+		elif detail == 'itemtype':
 			return self.__itemtype
-		elif detail == 'value'
+		elif detail == 'value':
 			return self.__value
-		elif detail == 'weight'
+		elif detail == 'weight':
 			return self.__weight
 			
 #Drinkable, temporary item
 class Potion(Item):
-	def __init__(self, itmname, itemtype, value, weight, effect, effectvalue, potionduration)
+	def __init__(self, itmname, itemtype, value, weight, effect, effectvalue, potionduration):
 		Item.__init__(itmname, itemtype, value, weight)
 		self.__effect = effect
 		self.__effectvalue = effectvalue
@@ -55,8 +55,8 @@ class Potion(Item):
 	def getpotionduration(self):
 		return self.__potionduration
 	
-	def usepotion(self, user)
-		if self.__effect == heal:
+	def usepotion(self, user, effect):
+		if effect == 'heal':
 			user.heal(self.__effectvalue)
 		
 class Weapon(Item):
@@ -84,7 +84,7 @@ class Armour(Item):
 		return self.__armourbns
 
 class Key(Item):
-	def __init__(self, doorid):
+	def __init__(self, itmname, itemtype, value, weight, doorid):
 		Item.__init__(itmname, itemtype, value, weight)
 		self.__doorid = doorid
 	

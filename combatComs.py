@@ -35,24 +35,23 @@ def initiative(attkr, dfndr, stat):
 	attkrspd = attkr.getstat(stat)
 	dfndrspd = dfndr.getstat(stat)
 	ratio = attkrspd / dfndrspd
-		if ratio < 1:
-			ratio = dfndrspd / attkrspd
-			return [ratio, False]
-		else:
-			return [ratio, True]
-			
+	if ratio < 1:
+		ratio = dfndrspd / attkrspd
+		return [ratio, False]
+	else:
+		return [ratio, True]
 
 def attackingcombat(attkr, dfndr):
 	atkRatio = initiative(attkr, dfndr, 'speed')
 	if atkRatio[1] == True:
-		while attkr.getstat(curhp) != 0 and dfndr.getstat(curhp) != 0:
+		while attkr.getstat('curhp') != 0 and dfndr.getstat('curhp') != 0:
 			i = 1
 			for i in range(i, atkRatio[0]):
 				meleedmg(attkr, dfndr)
 			meleedmg(dfndr, attkr)
-	elif: atkRatio[1] == False:
-		while attkr.getstat(curhp) != 0 and dfndr.getstat(curhp) != 0:
+	elif atkRatio[1] == False:
+		while attkr.getstat('curhp') != 0 and dfndr.getstat('curhp') != 0:
 			i = 1
-			for i in range(i, atkRatio[0])
+			for i in range(i, atkRatio[0]):
 				meleedmg(dfndr, attkr)
 			meleedmg(attkr, dfndr)

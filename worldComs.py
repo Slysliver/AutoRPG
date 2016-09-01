@@ -21,8 +21,6 @@
 #  MA 02110-1301, USA.
 #  
 #  
-class World(self, seed):
-
 
 class Location():
 	
@@ -32,7 +30,7 @@ class Location():
 		self.__worlddate = worlddate
 		self.__currentturn = currentturn
 		self.__weather = weather
-		self.__tempurature = tempurature
+		self.__temperature = temperature
 		self.__location = location
 	
 	def getcurrtime(self):
@@ -48,7 +46,7 @@ class Location():
 		return self.__weather
 	
 	def gettemperature(self):
-		return self.__tempurature
+		return self.__temperature
 	
 	def getLocation(self):
 		return self.__location
@@ -64,13 +62,14 @@ class Location():
 	def dailycyclechange(self):
 		currentcycle = self.__timeofday
 		currentcycle += 1
-		if currentcycle = 10:
+		if currentcycle == 10:
 			self.worlddatechange()
 			self.__worlddate = 0
 		else:
 			self.__worlddate = currentcycle
-	def daychange(self):
+	def worlddatechange(self):
 		self.__worlddate += 1
+
 	
 	
 

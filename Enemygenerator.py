@@ -25,7 +25,7 @@
 
 #build a generic enemy
 def makenormalenemy():
-	userlvl = user.getstat('lvl')
+	#userlvl = user.getstat('lvl')
 	
 	basepoints = 15
 	statarray = [1, 1, 1, 1]
